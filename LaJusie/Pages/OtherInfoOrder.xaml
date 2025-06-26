@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="LaJusie.Pages.OtherInfoOrder"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LaJusie.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Rectangle Fill="Black" Opacity="0.7" MouseDown="Rectangle_MouseDown"/>
+        <Border CornerRadius="50" Width="500" Height="400" Background="White" Padding="30 50 0 0">
+            <StackPanel>
+                <TextBlock Text="Остальная ифнормация" FontSize="30" Margin="0 15 0 0" TextAlignment="Center"/>
+                <StackPanel Orientation="Vertical" Margin="0 25 0 0" HorizontalAlignment="Center">
+                    <TextBlock Text="Адрес:" FontSize="25"/>
+                    <TextBox x:Name="AddressRtxb" Width="400" FontSize="25"/>                    
+                </StackPanel>
+                
+                <Button Content="Оформить заказ" Name="MakeOrder" Click="MakeOrder_Click"  FontSize="25" Width="250" Padding="10,5" Background="#FF0078D7" Foreground="White"  BorderThickness="0" Margin="0 30 0 0"/>
+                <Button Content="Назад" Name="Back" Click="Back_Click"  FontSize="15" FontWeight="Bold" Background="Transparent" BorderThickness="0" Margin="0 15"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

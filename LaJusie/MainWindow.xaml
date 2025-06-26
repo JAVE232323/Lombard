@@ -1,0 +1,44 @@
+﻿<Window x:Class="LaJusie.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LaJusie"
+        mc:Ignorable="d"
+        Title="LaJusie" Height="720" Width="1200">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Клиенты">
+                <DataGrid x:Name="dgClients" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}"/>
+                        <DataGridTextColumn Header="Телефон" Binding="{Binding Phone}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Товары">
+                <DataGrid x:Name="dgItems" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="Категория" Binding="{Binding Category.CategoryName}"/>
+                        <DataGridTextColumn Header="Клиент" Binding="{Binding Client.FullName}"/>
+                        <DataGridTextColumn Header="Рыночная цена" Binding="{Binding MarketPrice}"/>
+                        <DataGridTextColumn Header="Цена клиента" Binding="{Binding ClientPrice}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+
+            <TabItem Header="Заказы">
+                <DataGrid x:Name="dgOrders" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}"/>
+                        <DataGridTextColumn Header="Клиент" Binding="{Binding Client.FullName}"/>
+                        <DataGridTextColumn Header="Товар" Binding="{Binding Item.Name}"/>
+                        <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

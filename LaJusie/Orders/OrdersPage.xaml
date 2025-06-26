@@ -1,0 +1,82 @@
+﻿<Page x:Class="LaJusie.Orders.OrdersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LaJusie.Orders"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="OrdersPage">
+
+    <Grid x:Name="OrderGrid" Background="#9157ef">
+        <Border CornerRadius="50" Grid.Row="1" Margin="150 50" Padding="25" Background="White">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <ItemsControl x:Name="itemsControlOrders">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Border BorderBrush="#FFCCCCCC" CornerRadius="5" 
+                            Margin="0,5,0,10" Padding="10" Width="900" 
+                            Background="#FFF5F5F5">
+                                <StackPanel>
+                                    <!-- Информация о клиенте -->
+                                    <TextBlock Text="ФИО:" MinWidth="150"/>
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                                        <TextBlock Text="{Binding Client.LastName}" FontWeight="Bold" FontSize="14" MinWidth="150"/>
+                                        <TextBlock Text="{Binding Client.FirstName}" FontWeight="Bold" FontSize="14" MinWidth="150" Margin="5,0,0,0"/>
+                                        <TextBlock Text="{Binding Client.MiddleName}" FontWeight="Bold" FontSize="14" MinWidth="150" Margin="5,0,0,0"/>
+                                        <TextBlock Text="{Binding Client.Phone}" FontSize="14" Margin="20,0,0,0"/>
+                                    </StackPanel>
+
+                                    <!-- Информация о заказе -->
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">                                        
+                                        <TextBlock Text="{Binding Order.Date, StringFormat='Дата: {0:dd.MM.yyyy}'}" MinWidth="120"/>
+                                        <TextBlock Text="{Binding Status.Name, StringFormat='Статус заказа: {0}'}" Margin="10,0,0,0" MinWidth="120"/>
+                                        <TextBlock Text="{Binding Order.Address, StringFormat='Адрес: {0}'}" Margin="10,0,0,0" MinWidth="200"/>
+                                        <TextBlock Text="{Binding Order.Width, StringFormat='Ширина: {0} см'}" Margin="10,0,0,0"/>
+                                        <TextBlock Text="{Binding Order.Height, StringFormat='Высота: {0} см'}" Margin="10,0,0,0"/>
+                                    </StackPanel>
+
+                                    <!-- Список жалюзи в заказе -->
+                                    <TextBlock Text="Жалюзи в заказе:" FontWeight="Bold" Margin="0,10,0,5"/>
+                                    <ItemsControl ItemsSource="{Binding Jalousies}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border BorderBrush="#FFEEEEEE" BorderThickness="0,0,0,1" Padding="0,0,0,5" Margin="0,5,0,0">
+                                                    <StackPanel>
+                                                        <StackPanel Orientation="Horizontal">
+                                                            <TextBlock Text="{Binding Type.Name}" MinWidth="150"/>
+                                                            <TextBlock Text="{Binding Material.Name}" MinWidth="150" Margin="10,0,0,0"/>
+                                                            <TextBlock Text="{Binding Price, StringFormat='Цена за м²: {0} руб'}" MinWidth="150" Margin="10,0,0,0"/>
+                                                        </StackPanel>
+                                                        <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                                            <TextBlock Text="Площадь:" MinWidth="150"/>
+                                                            <TextBlock Text="{Binding Area, StringFormat=' {0:0.00} м²'}" MinWidth="150" Margin="10,0,0,0"/>
+                                                            <TextBlock Text="Стоимость:" MinWidth="150" Margin="10,0,0,0"/>
+                                                            <TextBlock Text="{Binding TotalPrice, StringFormat=' {0:0.00} руб.'}" FontWeight="Bold"/>
+                                                        </StackPanel>
+                                                    </StackPanel>
+                                                </Border>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+
+                                    <!-- Общая стоимость и кнопки -->
+                                    <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
+                                        <TextBlock Text="{Binding TotalOrderPrice, StringFormat='Общая стоимость: {0:0.00} руб'}" 
+                                           FontWeight="Bold" VerticalAlignment="Center"/>
+                                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="20,0,0,0">
+                                            <Button x:Name="ChangeStatus" Click="ChangeStatus_Click" Content="Изменить статус" Margin="0,0,10,0" 
+                                            Padding="5" Background="#FF0078D7" Foreground="White"/>
+                                            <Button x:Name="Print" Click="Print_Click" Content="Печать" Padding="5" 
+                                            Background="#FF28A745" Foreground="White"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Border>
+    </Grid>
+</Page>

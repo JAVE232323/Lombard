@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="LaJusie.Pages.AddClient2"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LaJusie.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Rectangle Fill="Black" Opacity="0.7" MouseDown="Rectangle_MouseDown" />
+        <Border CornerRadius="50" Width="500" Height="400" Background="White">
+            <StackPanel Margin="10" Width="300" VerticalAlignment="Center">
+
+                <Button x:Name="Back" Click="Back_Click" 
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Content="Назад"
+                        Width="50"
+                        HorizontalAlignment="Right"
+                        Margin="0 0 0 15"/>
+
+                <!-- Заголовок -->
+                <TextBlock Text="Добавление клиента" 
+               FontSize="16" 
+               FontWeight="Bold" 
+               Margin="0,0,0,10"/>
+
+                <!-- Форма ввода -->
+                
+                    
+
+                    <!-- Фамилия -->
+                    <TextBlock Text="Фамилия*" Grid.Row="0"/>
+                    <TextBox x:Name="txtLastName" Grid.Row="1" Margin="0,0,0,10"/>
+
+                    <!-- Имя -->
+                    <TextBlock Text="Имя*" Grid.Row="2"/>
+                    <TextBox x:Name="txtFirstName" Grid.Row="3" Margin="0,0,0,10"/>
+
+                    <!-- Отчество -->
+                    <TextBlock Text="Отчество" Grid.Row="4"/>
+                    <TextBox x:Name="txtMiddleName" Grid.Row="5" Margin="0,0,0,10"/>
+
+                    <!-- Телефон -->
+                    <TextBlock Text="Телефон*" Grid.Row="6"/>
+                    <TextBox x:Name="txtPhone" Grid.Row="7" Margin="0,0,0,15"/>
+
+                    <!-- Кнопка сохранения -->
+                    <Button Grid.Row="8" 
+                            Name="SaveButton"
+                            Content="Сохранить" 
+                            Padding="10,5" 
+                            HorizontalAlignment="Center"
+                            Background="#FF0078D7" 
+                            Foreground="White" 
+                            Click="SaveButton_Click"/>
+
+                
+
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
