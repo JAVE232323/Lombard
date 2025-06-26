@@ -207,23 +207,7 @@ namespace LaJusie.Admin
             // Информация о залоге
             sb.AppendLine("ДЕТАЛИ ЗАЛОГА:");
             sb.AppendLine($"Дата: {order.Order.Date:dd.MM.yyyy}");
-            sb.AppendLine($"Адрес: {order.Order.Address}");
-            sb.AppendLine($"Размеры: {order.Order.Width} мм x {order.Order.Height} мм");
-            sb.AppendLine($"Статус: {order.Status.Name}");
             sb.AppendLine();
-
-            // Список электроники
-            sb.AppendLine("СПИСОК ЭЛЕКТРОНИКИ:");
-            sb.AppendLine("--------------------------------------------------");
-            foreach (var item in order.Jalousies)
-            {
-                sb.AppendLine($"Тип: {item.Type.Name}");
-                sb.AppendLine($"Материал: {item.Material.Name}");
-                sb.AppendLine($"Цена за м²: {item.Price} руб");
-                sb.AppendLine($"Площадь: {item.Area:0.00} м²");
-                sb.AppendLine($"Стоимость: {item.TotalPrice:0.00} руб");
-                sb.AppendLine("--------------------------------------------------");
-            }
 
             // Итоговая стоимость
             sb.AppendLine();

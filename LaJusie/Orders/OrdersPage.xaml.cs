@@ -189,19 +189,6 @@ namespace LaJusie.Orders
             sb.AppendLine($"Статус: {order.Status.Name}");
             sb.AppendLine();
 
-            // Список электроники
-            sb.AppendLine("СПИСОК ЭЛЕКТРОНИКИ:");
-            sb.AppendLine("--------------------------------------------------");
-            foreach (var item in order.Jalousies)
-            {
-                sb.AppendLine($"Тип: {item.Type.Name}");
-                sb.AppendLine($"Материал: {item.Material.Name}");
-                sb.AppendLine($"Цена за м²: {item.Price} руб");
-                sb.AppendLine($"Площадь: {item.Area:0.00} м²");
-                sb.AppendLine($"Стоимость: {item.TotalPrice:0.00} руб");
-                sb.AppendLine("--------------------------------------------------");
-            }
-
             // Итоговая стоимость
             sb.AppendLine();
             sb.AppendLine($"ИТОГО: {order.TotalOrderPrice:0.00} руб".PadLeft(60));

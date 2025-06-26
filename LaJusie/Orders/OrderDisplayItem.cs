@@ -12,7 +12,6 @@ namespace LaJusie.Orders
         public LaJusie.Model.Orders Order { get; set; }
         public LaJusie.Model.Clients Client { get; set; }
         public LaJusie.Model.Items Item { get; set; }
-        public List<JalousieDisplayItem> Jalousies { get; set; }
         public decimal TotalOrderPrice { get; set; }
     }
 }

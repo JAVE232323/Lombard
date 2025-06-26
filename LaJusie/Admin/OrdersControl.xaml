@@ -35,27 +35,27 @@
         <DataGrid x:Name="OrdersGrid" Grid.Row="2" Margin="5" 
                   AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="№" Binding="{Binding Order_ID}" Width="Auto"/>
-                <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}" Width="80"/>
+                <DataGridTextColumn Header="№" Binding="{Binding Order.OrderId}" Width="Auto"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Order.Date, StringFormat={}{0:dd.MM.yyyy}}" Width="80"/>
                 <DataGridTextColumn Header="Клиент" Width="200">
                     <DataGridTextColumn.Binding>
                         <MultiBinding StringFormat="{}{0} {1} {2}">
-                            <Binding Path="Clients.LastName"/>
-                            <Binding Path="Clients.FirstName"/>
-                            <Binding Path="Clients.MiddleName"/>
+                            <Binding Path="Client.LastName"/>
+                            <Binding Path="Client.FirstName"/>
+                            <Binding Path="Client.MiddleName"/>
                         </MultiBinding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Предмет" Binding="{Binding Subject}" Width="*"/>
-                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" Width="120"/>
+                <DataGridTextColumn Header="Предмет" Binding="{Binding Item.Name}" Width="*"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Order.Price}" Width="120"/>
                 <DataGridTemplateColumn Width="Auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Button Content="Изменить" Margin="2" Width="80" 
-                                        Click="EditOrder_Click" Tag="{Binding Order_ID}"/>
+                                        Click="EditOrder_Click" Tag="{Binding Order.OrderId}"/>
                                 <Button Content="Удалить" Margin="2" Width="80" 
-                                        Click="DeleteOrder_Click" Tag="{Binding Order_ID}"/>
+                                        Click="DeleteOrder_Click" Tag="{Binding Order.OrderId}"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
