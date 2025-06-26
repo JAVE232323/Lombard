@@ -43,11 +43,11 @@ namespace LaJusie.Admin
 
         private void LoadClientOrders()
         {
-            OrdersGrid.ItemsSource = _db.Order
-           .Where(o => o.Client_ID == _clientId)
-           .Include(o => o.Status)
-           .OrderByDescending(o => o.Date)
-           .ToList();
+            OrdersGrid.ItemsSource = _db.Orders
+                .Where(o => o.ClientId == _clientId)
+                .Include(o => o.Items)
+                .OrderByDescending(o => o.Date)
+                .ToList();
         }
 
 

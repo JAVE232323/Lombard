@@ -14,10 +14,9 @@
         <DataGrid x:Name="OrdersGrid" Grid.Row="1" Margin="10" 
                   AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Номер залога" Binding="{Binding Order_ID}"/>
+                <DataGridTextColumn Header="Номер залога" Binding="{Binding OrderId}"/>
                 <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}"/>
-                <DataGridTextColumn Header="Клиент" Binding="{Binding Client.Name}"/>
-                <DataGridTextColumn Header="Предмет" Binding="{Binding Item.Name}"/>
+                <DataGridTextColumn Header="Предмет" Binding="{Binding Items.Name}"/>
                 <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
             </DataGrid.Columns>
         </DataGrid>
