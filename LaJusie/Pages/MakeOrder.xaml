@@ -12,15 +12,6 @@
             <Border CornerRadius="50" Width="500" Height="400" Background="White">
                 <StackPanel>
                     <TextBlock Text="Укажите размеры" FontSize="30" Margin="0 15 0 0" TextAlignment="Center"/>
-                    <StackPanel Orientation="Vertical" Margin="0 25 0 25" HorizontalAlignment="Center">
-                        <TextBlock Text="Ширина:" FontSize="25" />
-                    <TextBox x:Name="widthtxb"  PreviewTextInput="NumberValidationTextBox" Width="400" Height="30" TextAlignment="Left" FontSize="25"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="0 0 0 30" HorizontalAlignment="Center">
-                        <TextBlock Text="Длина:" FontSize="25" />
-                    <TextBox x:Name="heighttxb"  PreviewTextInput="NumberValidationTextBox" Width="400" Height="30" TextAlignment="Left" FontSize="25"/>
-                    </StackPanel>
-
                     <TextBlock Text="Размер указывать в милиметрах!" FontSize="10" FontWeight="Bold" TextAlignment="Center"/>
 
                     <Button Content="Продолжить" Name="Continue" Click="Continue_Click" FontSize="25" Width="250" Padding="10,5" Background="#FF0078D7" Foreground="White"  BorderThickness="0" Margin="0 30 0 0"/>

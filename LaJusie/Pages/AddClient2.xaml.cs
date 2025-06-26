@@ -24,27 +24,18 @@ namespace LaJusie.Pages
         LombardEntities db = new LombardEntities();
         private int User_ID;
         private int JalID;
-        private int Width;
-        private int Height;
-        private Grid MainGrid;
 
-        public AddClient2(int user_ID, int jalID, int width, int height ,Grid grid)
+        public AddClient2(int user_ID, int jalID)
         {
             InitializeComponent();
             User_ID = user_ID;
             JalID = jalID;
-            Width = width; 
-            Height = height;
-            MainGrid = grid;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
-            AddClient addClient = new AddClient(User_ID, JalID, Width, Height, MainGrid);
-            Grid.SetRowSpan(addClient, 2);
-            MainGrid.Children.Add(addClient);
+            AddClient addClient = new AddClient(User_ID, JalID);
             this.Visibility = Visibility.Collapsed;
-
         }
 
         private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
@@ -91,9 +82,7 @@ namespace LaJusie.Pages
 
                 MessageBox.Show("Клиент успешно добавлен!");
 
-                AddClient addClient = new AddClient(User_ID, JalID, Width, Height, MainGrid);
-                Grid.SetRowSpan(addClient, 2);
-                MainGrid.Children.Add(addClient);
+                AddClient addClient = new AddClient(User_ID, JalID);
                 this.Visibility = Visibility.Collapsed;
 
             }

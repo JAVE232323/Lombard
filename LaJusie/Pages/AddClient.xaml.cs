@@ -24,17 +24,13 @@ namespace LaJusie.Pages
         private LombardEntities db = new LombardEntities();
         private int User_ID;
         private int JalID;
-        private int Width;
-        private int Height;
         private Grid MainGrid;
 
-        public AddClient(int user_ID, int JalId, int width, int height, Grid grid)
+        public AddClient(int user_ID, int JalId, Grid grid)
         {
             InitializeComponent();
             User_ID = user_ID;
             JalID = JalId;
-            Width = width;
-            Height = height;
             MainGrid = grid;
         }
 
@@ -80,7 +76,7 @@ namespace LaJusie.Pages
         {
             if (sender is Button button && button.Tag is int clientId)
             {
-                OtherInfoOrder otherInfoOrder = new OtherInfoOrder(User_ID, JalID,  Width, Height, clientId, MainGrid);
+                OtherInfoOrder otherInfoOrder = new OtherInfoOrder(User_ID, JalID, clientId, MainGrid);
                 Grid.SetRowSpan(otherInfoOrder, 2);
                 MainGrid.Children.Add(otherInfoOrder);
                 this.Visibility = Visibility.Collapsed;
@@ -89,7 +85,7 @@ namespace LaJusie.Pages
 
         private void AddClient_Click(object sender, RoutedEventArgs e)
         {
-            AddClient2 addClient = new AddClient2(User_ID, JalID, Width, Height, MainGrid);
+            AddClient2 addClient = new AddClient2(User_ID, JalID, MainGrid);
             Grid.SetRowSpan(addClient, 2);
             MainGrid.Children.Add(addClient);
             this.Visibility = Visibility.Collapsed;
