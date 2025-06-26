@@ -61,21 +61,16 @@ namespace LaJusie.Admin
                 .OrderBy(c => c.LastName)
                 .ThenBy(c => c.FirstName)
                 .ToList()
-                .Select(c => new { c.Client_ID, FullName = $"{c.LastName} {c.FirstName} {c.MiddleName}" });
-
-            StatusComboBox.ItemsSource = _db.Status.ToList();
-
-            if (!_isEditMode)
-            {
-                StatusComboBox.SelectedIndex = 0; // Первый статус по умолчанию (например, "Новый")
-                OrderDatePicker.SelectedDate = DateTime.Now;
-            }
+                .Select(c => new { c.ClientId, FullName = $"{c.LastName} {c.FirstName} {c.MiddleName}" });
+            ItemComboBox.ItemsSource = _db.Items.ToList();
         }
 
         private void LoadOrderData()
         {
-            ClientComboBox.SelectedValue = _order.Client_ID;
+            ClientComboBox.SelectedValue = _order.ClientId;
+            ItemComboBox.SelectedValue = _order.ItemId;
             OrderDatePicker.SelectedDate = _order.Date;
+            PriceTextBox.Text = _order.Price?.ToString() ?? "";
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -86,25 +81,27 @@ namespace LaJusie.Admin
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ClientComboBox.SelectedItem == null ||
-                OrderDatePicker.SelectedDate == null)
+            if (ClientComboBox.SelectedItem == null || ItemComboBox.SelectedItem == null || OrderDatePicker.SelectedDate == null)
             {
                 MessageBox.Show("Заполните все обязательные поля!");
                 return;
             }
-
             dynamic selectedClient = ClientComboBox.SelectedItem;
-            _order.Client_ID = selectedClient.Client_ID;
+            dynamic selectedItem = ItemComboBox.SelectedItem;
+            _order.ClientId = selectedClient.ClientId;
+            _order.ItemId = selectedItem.ItemId;
             _order.Date = OrderDatePicker.SelectedDate.Value;
-            _order.User_ID = GetCurrentUserId(); // Метод для получения ID текущего пользователя
-
+            if (int.TryParse(PriceTextBox.Text, out int price))
+                _order.Price = price;
+            else
+                _order.Price = null;
+            _order.UserId = GetCurrentUserId();
             try
             {
                 if (!_isEditMode)
                 {
-                    _db.Order.Add(_order);
+                    _db.Orders.Add(_order);
                 }
-
                 _db.SaveChanges();
                 DialogResult = true;
                 Close();
