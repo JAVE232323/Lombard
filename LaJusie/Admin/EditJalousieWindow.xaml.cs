@@ -26,8 +26,8 @@ namespace LaJusie.Admin
         private readonly bool _isEditMode;
 
         public string WindowTitle => _isEditMode ?
-            $"Редактирование жалюзи №{_jalousie.Jalousie_ID}" :
-            "Новая жалюзи";
+            $"Редактирование электроники №{_jalousie.Jalousie_ID}" :
+            "Новая электроника";
 
         public EditJalousieWindow()
         {
@@ -65,7 +65,7 @@ namespace LaJusie.Admin
             {
                 try
                 {
-                    // Загружаем типы жалюзи
+                    // Загружаем типы электроники
                     TypeComboBox.ItemsSource = db.Type.ToList();
                     TypeComboBox.SelectedValuePath = "Type_ID";
                     TypeComboBox.DisplayMemberPath = "Name";
@@ -95,7 +95,7 @@ namespace LaJusie.Admin
             // Валидация данных
             if (TypeComboBox.SelectedItem == null)
             {
-                MessageBox.Show("Выберите тип жалюзи!");
+                MessageBox.Show("Выберите тип электроники!");
                 return;
             }
 

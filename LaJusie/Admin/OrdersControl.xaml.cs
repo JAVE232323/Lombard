@@ -212,8 +212,8 @@ namespace LaJusie.Admin
             sb.AppendLine($"Статус: {order.Status.Name}");
             sb.AppendLine();
 
-            // Список жалюзи
-            sb.AppendLine("СПИСОК ЖАЛЮЗИ:");
+            // Список электроники
+            sb.AppendLine("СПИСОК ЭЛЕКТРОНИКИ:");
             sb.AppendLine("--------------------------------------------------");
             foreach (var item in order.Jalousies)
             {
