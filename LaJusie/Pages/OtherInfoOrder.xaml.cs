@@ -22,7 +22,7 @@ namespace LaJusie.Pages
     /// </summary>
     public partial class OtherInfoOrder : UserControl
     {
-        private LaJusieEntities db = new LaJusieEntities();
+        private LombardEntities db = new LombardEntities();
         private int User_ID;
         private int JalID;
         private int Width1;

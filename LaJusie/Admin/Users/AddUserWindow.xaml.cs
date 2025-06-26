@@ -20,7 +20,7 @@ namespace LaJusie.Admin
     /// </summary>
     public partial class AddUserWindow : Window
     {
-        private readonly LaJusieEntities _db = new LaJusieEntities();
+        private readonly LombardEntities _db = new LombardEntities();
 
         public AddUserWindow()
         {

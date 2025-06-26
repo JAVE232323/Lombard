@@ -21,7 +21,7 @@ namespace LaJusie.Admin
     public partial class EditUserWindow : Window
     {
 
-        private readonly LaJusieEntities _db = new LaJusieEntities();
+        private readonly LombardEntities _db = new LombardEntities();
         private readonly Users _user;
 
         public EditUserWindow(int userId)

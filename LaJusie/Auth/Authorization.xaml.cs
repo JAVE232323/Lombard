@@ -21,7 +21,7 @@ namespace LaJusie.Auth
     public partial class Authorization : Window
     {
 
-        LaJusieEntities db = new LaJusieEntities();
+        LombardEntities db = new LombardEntities();
         public Authorization()
         {
             InitializeComponent();

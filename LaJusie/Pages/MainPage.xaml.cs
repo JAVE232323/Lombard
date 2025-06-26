@@ -23,7 +23,7 @@ namespace LaJusie.Pages
     public partial class MainPage : Page
     {
 
-        LaJusieEntities db = new LaJusieEntities();
+        LombardEntities db = new LombardEntities();
         private int User_ID;
         public MainPage(int user_ID)
         {

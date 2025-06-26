@@ -22,7 +22,7 @@ namespace LaJusie.Admin
     /// </summary>
     public partial class ClientsControl : UserControl
     {
-        LaJusieEntities _db = new LaJusieEntities();
+        LombardEntities _db = new LombardEntities();
 
         public ClientsControl()
         {

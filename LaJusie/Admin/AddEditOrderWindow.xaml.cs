@@ -22,7 +22,7 @@ namespace LaJusie.Admin
     /// </summary>
     public partial class AddEditOrderWindow : Window
     {
-        private readonly LaJusieEntities _db = new LaJusieEntities();
+        private readonly LombardEntities _db = new LombardEntities();
         private readonly Order _order;
         private readonly bool _isEditMode;
 

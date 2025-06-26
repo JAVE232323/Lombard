@@ -40,7 +40,7 @@ namespace LaJusie.Admin
 
         public EditJalousieWindow(int jalousieId) : this()
         {
-            using (var db = new LaJusieEntities())
+            using (var db = new LombardEntities())
             {
                 _jalousie = db.Jalousies
                     .Include("Type")
@@ -61,7 +61,7 @@ namespace LaJusie.Admin
 
         private void LoadComboBoxData()
         {
-            using (var db = new LaJusieEntities())
+            using (var db = new LombardEntities())
             {
                 try
                 {
@@ -117,7 +117,7 @@ namespace LaJusie.Admin
             _jalousie.Price = Convert.ToInt32(price);
 
             // Сохраняем в БД
-            using (var db = new LaJusieEntities())
+            using (var db = new LombardEntities())
             {
                 try
                 {

@@ -21,7 +21,7 @@ namespace LaJusie.Admin
     /// </summary>
     public partial class ClientOrdersWindow : Window
     {
-        private readonly LaJusieEntities _db = new LaJusieEntities();
+        private readonly LombardEntities _db = new LombardEntities();
         private readonly int _clientId;
 
         public ClientOrdersWindow(int clientId)

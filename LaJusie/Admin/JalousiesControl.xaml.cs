@@ -23,7 +23,7 @@ namespace LaJusie.Admin
     public partial class JalousiesControl : UserControl
     {
 
-        private readonly LaJusieEntities db = new LaJusieEntities();
+        private readonly LombardEntities db = new LombardEntities();
 
         public JalousiesControl()
         {

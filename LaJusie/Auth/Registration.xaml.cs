@@ -20,7 +20,7 @@ namespace LaJusie.Auth
     /// </summary>
     public partial class Registration : Window
     {
-        LaJusieEntities db = new LaJusieEntities();
+        LombardEntities db = new LombardEntities();
         public Registration()
         {
             InitializeComponent();

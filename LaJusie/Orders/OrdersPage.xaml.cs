@@ -24,7 +24,7 @@ namespace LaJusie.Orders
     public partial class OrdersPage : Page
     {
 
-        LaJusieEntities db = new LaJusieEntities();
+        LombardEntities db = new LombardEntities();
         
         public OrdersPage()
         {

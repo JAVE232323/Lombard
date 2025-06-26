@@ -21,7 +21,7 @@ namespace LaJusie.Pages
     /// </summary>
     public partial class AddClient : UserControl
     {
-        private LaJusieEntities db = new LaJusieEntities();
+        private LombardEntities db = new LombardEntities();
         private int User_ID;
         private int JalID;
         private int Width;

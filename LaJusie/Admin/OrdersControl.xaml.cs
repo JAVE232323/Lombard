@@ -24,7 +24,7 @@ namespace LaJusie.Admin
     /// </summary>
     public partial class OrdersControl : UserControl
     {
-        private readonly LaJusieEntities _db = new LaJusieEntities();
+        private readonly LombardEntities _db = new LombardEntities();
 
         public OrdersControl()
         {

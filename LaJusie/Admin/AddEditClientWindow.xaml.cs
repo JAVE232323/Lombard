@@ -20,7 +20,7 @@ namespace LaJusie.Admin
     /// </summary>
     public partial class AddEditClientWindow : Window
     {
-        private readonly LaJusieEntities _db = new LaJusieEntities();
+        private readonly LombardEntities _db = new LombardEntities();
         private readonly LaJusie.Model.Clients _client;
         private readonly bool _isEditMode;
 
