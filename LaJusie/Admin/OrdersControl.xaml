@@ -31,7 +31,7 @@
             <Button x:Name="ClearSearch" Content="Очистить" Margin="5" Width="80" Click="ClearSearch_Click"/>
         </StackPanel>
 
-        <!-- Список заказов -->
+        <!-- Список залогов -->
         <DataGrid x:Name="OrdersGrid" Grid.Row="2" Margin="5" 
                   AutoGenerateColumns="False" CanUserAddRows="False">
             <DataGrid.Columns>
@@ -73,7 +73,7 @@
 
         <!-- Кнопки управления -->
         <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Right" Margin="5">
-            <Button x:Name="AddOrder" Content="Новый заказ" Margin="5" Width="120" 
+            <Button x:Name="AddOrder" Content="Новый залог" Margin="5" Width="120" 
                     Click="AddOrder_Click"/>
             <Button x:Name="RefreshOrders" Content="Обновить" Margin="5" Width="80" 
                     Click="RefreshOrders_Click"/>           

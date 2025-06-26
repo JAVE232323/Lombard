@@ -57,7 +57,7 @@
                     Click="AddClient_Click"/>
             <Button x:Name="RefreshClients" Content="Обновить список" Margin="5" Width="120" 
                     Click="RefreshClients_Click"/>
-            <Button x:Name="ShowClientOrders" Content="Заказы клиента" Margin="5" Width="120"
+            <Button x:Name="ShowClientOrders" Content="Залоги клиента" Margin="5" Width="120"
                     Click="ShowClientOrders_Click" IsEnabled="{Binding ElementName=ClientsGrid, Path=SelectedItems.Count}"/>
         </StackPanel>
     </Grid>

@@ -16,7 +16,7 @@
                     <TextBox x:Name="AddressRtxb" Width="400" FontSize="25"/>                    
                 </StackPanel>
                 
-                <Button Content="Оформить заказ" Name="MakeOrder" Click="MakeOrder_Click"  FontSize="25" Width="250" Padding="10,5" Background="#FF0078D7" Foreground="White"  BorderThickness="0" Margin="0 30 0 0"/>
+                <Button Content="Оформить залог" Name="MakeOrder" Click="MakeOrder_Click"  FontSize="25" Width="250" Padding="10,5" Background="#FF0078D7" Foreground="White"  BorderThickness="0" Margin="0 30 0 0"/>
                 <Button Content="Назад" Name="Back" Click="Back_Click"  FontSize="15" FontWeight="Bold" Background="Transparent" BorderThickness="0" Margin="0 15"/>
             </StackPanel>
         </Border>

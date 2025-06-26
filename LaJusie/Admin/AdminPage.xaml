@@ -20,11 +20,11 @@
                 <local:ClientsControl/>
             </TabItem>
 
-            <TabItem Header="Заказы">
+            <TabItem Header="Залоги">
                 <local:OrdersControl/>
             </TabItem>
 
-            <TabItem Header="Жалюзи">
+            <TabItem Header="Электроника">
                 <local:JalousiesControl/>
             </TabItem>
 

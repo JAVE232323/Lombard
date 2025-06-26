@@ -7,7 +7,7 @@
              d:DesignHeight="600" d:DesignWidth="800">
     <TabControl>
         <!-- Вкладка с готовыми комбинациями -->
-        <TabItem Header="Каталог жалюзи">
+        <TabItem Header="Каталог электроники">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>

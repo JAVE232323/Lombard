@@ -29,7 +29,7 @@
                 </DataGrid>
             </TabItem>
 
-            <TabItem Header="Заказы">
+            <TabItem Header="Залоги">
                 <DataGrid x:Name="dgOrders" AutoGenerateColumns="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}"/>
