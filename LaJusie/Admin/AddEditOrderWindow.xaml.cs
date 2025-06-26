@@ -26,7 +26,7 @@ namespace LaJusie.Admin
         private readonly Order _order;
         private readonly bool _isEditMode;
 
-        public string WindowTitle => _isEditMode ? $"Редактирование заказа №{_order.Order_ID}" : "Новый заказ";
+        public string WindowTitle => _isEditMode ? $"Редактирование залога №{_order.Order_ID}" : "Новый залог";
 
         public AddEditOrderWindow()
         {
@@ -46,7 +46,7 @@ namespace LaJusie.Admin
 
             if (_order == null)
             {
-                MessageBox.Show("Заказ не найден!");
+                MessageBox.Show("Залог не найден!");
                 Close();
                 return;
             }
@@ -129,7 +129,7 @@ namespace LaJusie.Admin
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка сохранения заказа: {ex.Message}");
+                MessageBox.Show($"Ошибка сохранения залога: {ex.Message}");
             }
         }
 

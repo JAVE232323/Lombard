@@ -104,7 +104,7 @@ namespace LaJusie.Orders
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка при загрузке заказов: {ex.Message}\n\n{ex.InnerException?.Message}");
+                MessageBox.Show($"Ошибка при загрузке залогов: {ex.Message}\n\n{ex.InnerException?.Message}");
             }
         }
 
@@ -113,7 +113,7 @@ namespace LaJusie.Orders
             // Получаем данные заказа
             if (!(sender is Button button) || !(button.DataContext is OrderDisplayItem orderItem))
             {
-                MessageBox.Show("Не удалось получить данные заказа");
+                MessageBox.Show("Не удалось получить данные залога");
                 return;
             }
 
@@ -186,14 +186,14 @@ namespace LaJusie.Orders
         {
             if (!(sender is Button button) || !(button.DataContext is OrderDisplayItem orderItem))
             {
-                MessageBox.Show("Не удалось получить данные заказа");
+                MessageBox.Show("Не удалось получить данные залога");
                 return;
             }
 
             try
             {
                 // Создаем имя файла
-                string fileName = $"Заказ_{orderItem.Order.Order_ID}_{DateTime.Now:yyyyMMddHHmmss}.txt";
+                string fileName = $"Залог_{orderItem.Order.Order_ID}_{DateTime.Now:yyyyMMddHHmmss}.txt";
 
                 // Получаем путь для сохранения
                 string filePath = System.IO.Path.Combine(
@@ -222,7 +222,7 @@ namespace LaJusie.Orders
 
             // Шапка документа
             sb.AppendLine("==================================================================");
-            sb.AppendLine($"ЗАКАЗ № {order.Order.Order_ID}".PadLeft(50));
+            sb.AppendLine($"ЗАЛОГ № {order.Order.Order_ID}".PadLeft(50));
             sb.AppendLine("==================================================================");
             sb.AppendLine();
 
@@ -233,7 +233,7 @@ namespace LaJusie.Orders
             sb.AppendLine();
 
             // Информация о заказе
-            sb.AppendLine("ДЕТАЛИ ЗАКАЗА:");
+            sb.AppendLine("ДЕТАЛИ ЗАЛОГА:");
             sb.AppendLine($"Дата: {order.Order.Date:dd.MM.yyyy}");
             sb.AppendLine($"Адрес: {order.Order.Address}");
             sb.AppendLine($"Размеры: {order.Order.Width} мм x {order.Order.Height} мм");

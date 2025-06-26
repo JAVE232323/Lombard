@@ -37,7 +37,7 @@ namespace LaJusie.Admin
             var client = _db.Clients.Find(_clientId);
             if (client != null)
             {
-                ClientInfoText.Text = $"Заказы клиента: {client.LastName} {client.FirstName} {client.MiddleName} | Телефон: {client.Phone}";
+                ClientInfoText.Text = $"Залоги клиента: {client.LastName} {client.FirstName} {client.MiddleName} | Телефон: {client.Phone}";
             }
         }
 

@@ -52,7 +52,7 @@ namespace LaJusie.Admin
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка загрузки заказов: {ex.Message}");
+                MessageBox.Show($"Ошибка загрузки залогов: {ex.Message}");
             }
         }
 
@@ -129,7 +129,7 @@ namespace LaJusie.Admin
             var selectedOrder = (Order)OrdersGrid.SelectedItem;
 
             var result = MessageBox.Show(
-                $"Вы уверены, что хотите удалить заказ №{selectedOrder.Order_ID}?",
+                $"Вы уверены, что хотите удалить залог №{selectedOrder.Order_ID}?",
                 "Подтверждение удаления",
                 MessageBoxButton.YesNo,
                 MessageBoxImage.Warning);
@@ -144,7 +144,7 @@ namespace LaJusie.Admin
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Ошибка при удалении заказа: {ex.Message}");
+                    MessageBox.Show($"Ошибка при удалении залога: {ex.Message}");
                 }
             }
         }
@@ -158,14 +158,14 @@ namespace LaJusie.Admin
         {
             if (!(sender is Button button) || !(button.DataContext is OrderDisplayItem orderItem))
             {
-                MessageBox.Show("Не удалось получить данные заказа");
+                MessageBox.Show("Не удалось получить данные залога");
                 return;
             }
 
             try
             {
                 // Создаем имя файла
-                string fileName = $"Заказ_{orderItem.Order.Order_ID}_{DateTime.Now:yyyyMMddHHmmss}.txt";
+                string fileName = $"Залог_{orderItem.Order.Order_ID}_{DateTime.Now:yyyyMMddHHmmss}.txt";
 
                 // Получаем путь для сохранения
                 string filePath = System.IO.Path.Combine(
@@ -194,7 +194,7 @@ namespace LaJusie.Admin
 
             // Шапка документа
             sb.AppendLine("==================================================================");
-            sb.AppendLine($"ЗАКАЗ № {order.Order.Order_ID}".PadLeft(50));
+            sb.AppendLine($"ЗАЛОГ № {order.Order.Order_ID}".PadLeft(50));
             sb.AppendLine("==================================================================");
             sb.AppendLine();
 
@@ -204,8 +204,8 @@ namespace LaJusie.Admin
             sb.AppendLine($"Телефон: {order.Client.Phone}");
             sb.AppendLine();
 
-            // Информация о заказе
-            sb.AppendLine("ДЕТАЛИ ЗАКАЗА:");
+            // Информация о залоге
+            sb.AppendLine("ДЕТАЛИ ЗАЛОГА:");
             sb.AppendLine($"Дата: {order.Order.Date:dd.MM.yyyy}");
             sb.AppendLine($"Адрес: {order.Order.Address}");
             sb.AppendLine($"Размеры: {order.Order.Width} мм x {order.Order.Height} мм");
