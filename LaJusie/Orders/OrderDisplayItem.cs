@@ -9,9 +9,9 @@ namespace LaJusie.Orders
 {
     internal class OrderDisplayItem
     {
-        public LaJusie.Model.Order Order { get; set; }  
+        public LaJusie.Model.Order Order { get; set; }
         public LaJusie.Model.Clients Client { get; set; }
-        public LaJusie.Model.Status Status { get; set; }
+        public LaJusie.Model.Items Item { get; set; }
         public List<JalousieDisplayItem> Jalousies { get; set; }
         public decimal TotalOrderPrice { get; set; }
     }

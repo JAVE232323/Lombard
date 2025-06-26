@@ -16,10 +16,9 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Номер залога" Binding="{Binding Order_ID}"/>
                 <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat={}{0:dd.MM.yyyy}}"/>
-                <DataGridTextColumn Header="Адрес" Binding="{Binding Address}"/>
-                <DataGridTextColumn Header="Ширина" Binding="{Binding Width}"/>
-                <DataGridTextColumn Header="Высота" Binding="{Binding Height}"/>
-                <DataGridTextColumn Header="Статус" Binding="{Binding Status.Name}"/>
+                <DataGridTextColumn Header="Клиент" Binding="{Binding Client.Name}"/>
+                <DataGridTextColumn Header="Предмет" Binding="{Binding Item.Name}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

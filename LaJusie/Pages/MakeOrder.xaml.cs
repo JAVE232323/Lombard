@@ -53,7 +53,7 @@ namespace LaJusie.Pages
 
         private void Continue_Click(object sender, RoutedEventArgs e)
         {
-            AddClient addClient = new AddClient(User_ID, JalID, Convert.ToInt32(widthtxb.Text), Convert.ToInt32(heighttxb.Text), MainGrid);
+            AddClient addClient = new AddClient(User_ID, JalID, MainGrid);
             Grid.SetRowSpan(addClient, 2);
             MainGrid.Children.Add(addClient);
             this.Visibility = Visibility.Collapsed;

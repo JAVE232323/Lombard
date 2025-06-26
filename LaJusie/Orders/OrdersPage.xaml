@@ -28,12 +28,11 @@
                                     </StackPanel>
 
                                     <!-- Информация о залоге -->
-                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">                                        
+                                    <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                                         <TextBlock Text="{Binding Order.Date, StringFormat='Дата: {0:dd.MM.yyyy}'}" MinWidth="120"/>
-                                        <TextBlock Text="{Binding Status.Name, StringFormat='Статус залога: {0}'}" Margin="10,0,0,0" MinWidth="120"/>
-                                        <TextBlock Text="{Binding Order.Address, StringFormat='Адрес: {0}'}" Margin="10,0,0,0" MinWidth="200"/>
-                                        <TextBlock Text="{Binding Order.Width, StringFormat='Ширина: {0} см'}" Margin="10,0,0,0"/>
-                                        <TextBlock Text="{Binding Order.Height, StringFormat='Высота: {0} см'}" Margin="10,0,0,0"/>
+                                        <TextBlock Text="{Binding Client.LastName, StringFormat='Клиент: {0}'}" Margin="10,0,0,0" MinWidth="120"/>
+                                        <TextBlock Text="{Binding Item.Name, StringFormat='Предмет: {0}'}" Margin="10,0,0,0" MinWidth="120"/>
+                                        <TextBlock Text="{Binding Order.Price, StringFormat='Цена: {0} руб.'}" Margin="10,0,0,0" MinWidth="120"/>
                                     </StackPanel>
 
                                     <!-- Список электроники в залоге -->

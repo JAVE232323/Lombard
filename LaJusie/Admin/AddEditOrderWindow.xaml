@@ -9,24 +9,11 @@
             <ComboBox x:Name="ClientComboBox" Margin="0,0,0,10" 
           DisplayMemberPath="FullName"/>
 
-            <TextBlock Text="Адрес установки:"/>
-            <TextBox x:Name="AddressTextBox" Margin="0,0,0,10"/>
-
             <TextBlock Text="Дата залога:"/>
             <DatePicker x:Name="OrderDatePicker" Margin="0,0,0,10" SelectedDateFormat="Short"/>
 
-            <TextBlock Text="Размеры (см):"/>
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
-                <TextBox x:Name="WidthTextBox" Width="80" Margin="0,0,10,0" 
-             Text="0" PreviewTextInput="NumberValidationTextBox"/>
-                <TextBlock Text="x" VerticalAlignment="Center" Margin="0,0,10,0"/>
-                <TextBox x:Name="HeightTextBox" Width="80" Margin="0,0,10,0" 
-             Text="0" PreviewTextInput="NumberValidationTextBox"/>
-            </StackPanel>
-
-            <TextBlock Text="Статус:"/>
-            <ComboBox x:Name="StatusComboBox" Margin="0,0,0,20" 
-          DisplayMemberPath="Name"/>
+            <TextBlock Text="Цена:"/>
+            <TextBox x:Name="PriceTextBox" Margin="0,0,0,10"/>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button Content="Сохранить" Width="80" Margin="0,0,10,0" Click="SaveButton_Click"/>

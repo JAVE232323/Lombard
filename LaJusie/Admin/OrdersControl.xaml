@@ -46,16 +46,8 @@
                         </MultiBinding>
                     </DataGridTextColumn.Binding>
                 </DataGridTextColumn>
-                <DataGridTextColumn Header="Адрес" Binding="{Binding Address}" Width="*"/>
-                <DataGridTextColumn Header="Размеры" Width="120">
-                    <DataGridTextColumn.Binding>
-                        <MultiBinding StringFormat="{}{0} x {1} мм">
-                            <Binding Path="Width"/>
-                            <Binding Path="Height"/>
-                        </MultiBinding>
-                    </DataGridTextColumn.Binding>
-                </DataGridTextColumn>
-                <DataGridTextColumn Header="Статус" Binding="{Binding Status.Name}" Width="120"/>
+                <DataGridTextColumn Header="Предмет" Binding="{Binding Subject}" Width="*"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}" Width="120"/>
                 <DataGridTemplateColumn Width="Auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

@@ -47,56 +47,16 @@ namespace LaJusie.Orders
                 {
                     var client = db.Clients
                         .AsNoTracking()
-                        .FirstOrDefault(c => c.Client_ID == order.Client_ID);
-
-                    var status = db.Status
+                        .FirstOrDefault(c => c.ClientId == order.ClientId);
+                    var item = db.Items
                         .AsNoTracking()
-                        .FirstOrDefault(s => s.Status_ID == order.Status_ID);
-
-                    var listJalousie = db.ListJalousie
-                        .AsNoTracking()
-                        .Where(lj => lj.Order_ID == order.Order_ID)
-                        .ToList();
-
-                    var jalousies = new List<JalousieDisplayItem>();
-                    decimal totalOrderPrice = 0; 
-
-                    foreach (var lj in listJalousie)
-                    {
-                        var jalousie = db.Jalousies
-                            .AsNoTracking()
-                            .Include("Type")
-                            .Include("Materials")
-                            .FirstOrDefault(j => j.Jalousie_ID == lj.Jalousie_ID);
-
-                        if (jalousie != null)
-                        {
-                            
-                            decimal area = (order.Width / 100m) * (order.Height / 100m);
-
-                           
-                            decimal totalPrice = (jalousie.Price * area) + 2000m;
-                            totalOrderPrice += totalPrice;
-
-                            jalousies.Add(new JalousieDisplayItem
-                            {
-                                Jalousie = jalousie,
-                                Type = jalousie.Type,
-                                Material = jalousie.Materials,
-                                Price = jalousie.Price, 
-                                Area = area,            
-                                TotalPrice = totalPrice 
-                            });
-                        }
-                    }
+                        .FirstOrDefault(i => i.ItemId == order.ItemId);
 
                     result.Add(new OrderDisplayItem
                     {
                         Order = order,
                         Client = client,
-                        Status = status,
-                        Jalousies = jalousies,
-                        TotalOrderPrice = totalOrderPrice 
+                        Item = item
                     });
                 }
 

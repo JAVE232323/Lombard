@@ -52,10 +52,6 @@ namespace LaJusie.Pages
                     {
                         User_ID = User_ID,
                         Client_ID = Client_ID,
-                        Address = AddressRtxb.Text,
-                        Status_ID = 1, // Статус "Новый"
-                        Width = Width1,
-                        Height = Height1,
                         Date = DateTime.Today
                     };
 
@@ -76,8 +72,7 @@ namespace LaJusie.Pages
                     transaction.Commit();
 
                     MessageBox.Show($"Заказ #{newOrder.Order_ID} успешно создан!\n" +
-                                  $"Дата: {newOrder.Date:yyyy-MM-dd}\n" +
-                                  $"Адрес: {newOrder.Address}",
+                                  $"Дата: {newOrder.Date:yyyy-MM-dd}",
                                   "Успех",
                                   MessageBoxButton.OK,
                                   MessageBoxImage.Information);

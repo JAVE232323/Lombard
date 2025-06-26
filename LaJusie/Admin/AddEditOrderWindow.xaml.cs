@@ -75,11 +75,7 @@ namespace LaJusie.Admin
         private void LoadOrderData()
         {
             ClientComboBox.SelectedValue = _order.Client_ID;
-            AddressTextBox.Text = _order.Address;
             OrderDatePicker.SelectedDate = _order.Date;
-            WidthTextBox.Text = _order.Width.ToString();
-            HeightTextBox.Text = _order.Height.ToString();
-            StatusComboBox.SelectedValue = _order.Status_ID;
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -91,29 +87,15 @@ namespace LaJusie.Admin
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             if (ClientComboBox.SelectedItem == null ||
-                string.IsNullOrWhiteSpace(AddressTextBox.Text) ||
-                OrderDatePicker.SelectedDate == null ||
-                StatusComboBox.SelectedItem == null)
+                OrderDatePicker.SelectedDate == null)
             {
                 MessageBox.Show("Заполните все обязательные поля!");
                 return;
             }
 
-            if (!int.TryParse(WidthTextBox.Text, out int width) ||
-                !int.TryParse(HeightTextBox.Text, out int height) ||
-                width <= 0 || height <= 0)
-            {
-                MessageBox.Show("Укажите корректные размеры (целые числа больше 0)!");
-                return;
-            }
-
             dynamic selectedClient = ClientComboBox.SelectedItem;
             _order.Client_ID = selectedClient.Client_ID;
-            _order.Address = AddressTextBox.Text.Trim();
             _order.Date = OrderDatePicker.SelectedDate.Value;
-            _order.Width = width;
-            _order.Height = height;
-            _order.Status_ID = ((Status)StatusComboBox.SelectedItem).Status_ID;
             _order.User_ID = GetCurrentUserId(); // Метод для получения ID текущего пользователя
 
             try
