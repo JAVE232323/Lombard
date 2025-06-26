@@ -36,29 +36,18 @@ namespace LaJusie.Orders
         {
             try
             {
-                var orders = db.Order
-                    .AsNoTracking()
+                var orders = db.Orders
+                    .Include(o => o.Clients)
+                    .Include(o => o.Items)
                     .OrderByDescending(o => o.Date)
                     .ToList();
 
-                var result = new List<OrderDisplayItem>();
-
-                foreach (var order in orders)
+                var result = orders.Select(order => new OrderDisplayItem
                 {
-                    var client = db.Clients
-                        .AsNoTracking()
-                        .FirstOrDefault(c => c.ClientId == order.ClientId);
-                    var item = db.Items
-                        .AsNoTracking()
-                        .FirstOrDefault(i => i.ItemId == order.ItemId);
-
-                    result.Add(new OrderDisplayItem
-                    {
-                        Order = order,
-                        Client = client,
-                        Item = item
-                    });
-                }
+                    Order = order,
+                    Client = order.Clients,
+                    Item = order.Items
+                }).ToList();
 
                 itemsControlOrders.ItemsSource = result;
             }

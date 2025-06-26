@@ -31,6 +31,7 @@
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
                                         <TextBlock Text="{Binding Order.Date, StringFormat='Дата: {0:dd.MM.yyyy}'}" MinWidth="120"/>
                                         <TextBlock Text="{Binding Client.LastName, StringFormat='Клиент: {0}'}" Margin="10,0,0,0" MinWidth="120"/>
+                                        <TextBlock Text="{Binding Client.FirstName}" Margin="5,0,0,0" MinWidth="80"/>
                                         <TextBlock Text="{Binding Item.Name, StringFormat='Предмет: {0}'}" Margin="10,0,0,0" MinWidth="120"/>
                                         <TextBlock Text="{Binding Order.Price, StringFormat='Цена: {0} руб.'}" Margin="10,0,0,0" MinWidth="120"/>
                                     </StackPanel>
